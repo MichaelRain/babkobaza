@@ -172,13 +172,19 @@ class SiteController extends Controller
          if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             $username= Html::encode($form->username);
             $task= Html::encode($form->task);
-            $deadline= Html::encode($form->deadline);
-            $count= Html::encode($form->count);
+            $full_pay= Html::encode($form->full_pay);
+            $payed= Html::encode($form->payed);
+            $pay= Html::encode($form->pay);
+            $status= Html::encode($form->status);
+            $project_name= Html::encode($form->project_name);
             $post= new tasks();
-            $post->user_id=$user_id;
+            $post->user_id=$username;
             $post->task=$task;
-            $post->status=$deadline;
-            $post->full_pay=$count;
+            $post->full_pay=$full_pay;
+            $post->payed=$payed;
+            $post->pay=$pay;
+            $post->status=$status;
+            $post->project_name=$project_name;
          }
         return $this-> render('add',[
             'form'=>$form

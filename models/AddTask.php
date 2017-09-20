@@ -8,7 +8,7 @@ class AddTask extends \yii\base\Model
 {
 	public $username;
 	public $task;
-	public $fullpay;
+	public $full_pay;
 	public $payed;
 	public $pay;
 	public $status;
